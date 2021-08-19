@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <SButton v-ripple flat label="Button" :size="size"/>
+    <STextInput placeholder="Your placeholder" :size="size"/>
+    <SDropdown :list="['Hello', 'World']" value="Please chose value" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { SButton } from '@/shared/components/Button/Button.vue'
+import { SDropdown } from '@/shared/components/Dropdown/Dropdown.vue'
+import { STextInput } from '@/shared/components/TextInput/TextInput.vue'
+import{ButtonSize} from '../shared/components/Button/Button.contracts'
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+@Component({name: 'Home', components: {SButton, STextInput, SDropdown}})
+export default class Home extends Vue {
+
+  public size: ButtonSize = ButtonSize.MEDIUM
+}
 </script>
