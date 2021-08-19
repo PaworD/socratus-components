@@ -1,24 +1,12 @@
-# socratus
+# Socratus Components
+## Collection of modules / components for socratus platform 
 
-## Project setup
+## Install dependencies
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### RUN & COMPILE Storybook
 ```
-yarn serve
+yarn storybook:serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
