@@ -26,7 +26,6 @@ const TemplateDefault: Story<DropdownItemProps> = (args, {argTypes}) => ({
     template: `
       <SDropdownItem v-bind="$props">
       <template v-slot:icon>
-        H
       </template>
       </SDropdownItem>
   `,
