@@ -6,7 +6,8 @@ export enum ButtonSize {
 
 export enum ButtonTheme {
   PRIMARY = 'primary',
-  SECONDARY = 'secondary'
+  SECONDARY = 'secondary',
+  TRANSPARENT = 'transparent'
 }
 
 export interface ButtonProps {

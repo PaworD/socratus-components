@@ -41,6 +41,7 @@ export default SButton
     position: relative;
     border: none;
     color: #fff;
+    font-size: 1rem;
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
@@ -59,17 +60,25 @@ export default SButton
       background: #0047df;
     }
 
+    &--transparent {
+      background: transparent;
+      color: #3a3a3a;
+    }
+
     //Sizes
     &--normal {
       padding: 1rem;
+      font-size: 1rem;
     }
 
     &--medium {
       padding: 0.6rem;
+      font-size: .95rem;
     }
 
     &--small {
       padding: 0.4rem;
+      font-size: .9rem;
     }
   }
 </style>

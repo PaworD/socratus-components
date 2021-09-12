@@ -1,5 +1,5 @@
 <template>
-  <li class="">
+  <li v-bind="$attrs" @click="onClick">
     <slot name="icon" class="dropdown-item-leading"></slot>
     {{ label }}
   </li>
@@ -8,10 +8,21 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-@Component<SDropdownItem>({name: 'SDropdownItem'})
+@Component<SDropdownItem>({
+  name: 'SDropdownItem',
+
+  mounted (): void {
+   console.log(this.$attrs)
+  }
+
+})
 export class SDropdownItem extends Vue {
   @Prop({type: String, required: true})
   private readonly label!: string
+
+  public onClick (): void {
+    this.$emit('click')
+  }
 }
 export default SDropdownItem
 </script>
@@ -20,7 +31,6 @@ export default SDropdownItem
 
   li{
     list-style: none;
-    transition: all .11s ease-in;
     padding: 12px;
     color: #666;
     color: #666;
