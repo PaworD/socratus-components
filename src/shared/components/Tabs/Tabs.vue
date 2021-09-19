@@ -12,13 +12,13 @@
 <script lang="ts">
 
 import { Vue , Component } from "vue-property-decorator";
-import { Tab } from "@/shared/components/Tabs/_";
+import { STab } from "@/shared/components/Tabs/_";
 
-@Component({
+@Component<STabs>({
   name: 'STabs',
 
   created (): void {
-    this.tabs = this.$children
+    this.tabs = this.$children as STab[]
   },
 
   mounted (): void {
@@ -27,7 +27,7 @@ import { Tab } from "@/shared/components/Tabs/_";
 })
 export class STabs extends Vue {
   public selected = 0
-  public tabs: Tab[] = []
+  public tabs: STab[] = []
 
   public select (index: number) {
     this.selected = index

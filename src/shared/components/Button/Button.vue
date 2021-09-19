@@ -1,8 +1,9 @@
 <template>
   <button
   @click="onClick"
+  :data-tooltip="tooltip"
   :class="[ 'button ', `button--${theme}`, `button--${size}`, { 'button--flat' : flat }]"
-  >{{label}}</button>  
+  >{{label}}</button>
 </template>
 
 <script lang="ts">
@@ -19,6 +20,9 @@ import { ButtonSize, ButtonTheme } from './Button.contracts'
 export class SButton extends Vue {
   @Prop({type: String, required: true, default: {}})
   private readonly label!: string
+
+  @Prop({type: String, required: false})
+  private readonly tooltip!: string
 
   @Prop({type: Boolean, required: false, default: false})
   private readonly flat!: boolean
@@ -38,11 +42,9 @@ export default SButton
 
 <style lang="scss">
   .button {
-    position: relative;
     border: none;
     color: #fff;
     font-size: 1rem;
-    overflow: hidden;
     cursor: pointer;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     outline: 0;

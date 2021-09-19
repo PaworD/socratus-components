@@ -17,9 +17,7 @@ const meta: Meta = {
 
 export default meta
 
-const defaultArgs = {
-    title: 'Tab Title'
-}
+const defaultArgs = {}
 
 
 const TemplateDefault: Story<STabs> = (args, {argTypes}) => ({

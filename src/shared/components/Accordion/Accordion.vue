@@ -28,8 +28,8 @@ import { AccordionType } from './Accordion.contracts'
  */
 @Component({ name: 'SAccordion' })
 export class SAccordion extends Vue {
-  @Prop({ type: Object, required: false, default: AccordionType.Simple })
-  public readonly type!: AccordionType
+  @Prop({ type: String, required: false, default: AccordionType.Simple })
+  public readonly type!: string
   
   public scrolled = false
 

@@ -13,10 +13,10 @@ import { Vue , Component, Prop } from "vue-property-decorator";
 })
 export class STab extends Vue {
   @Prop({type: String, required: true})
-  public readonly title!: string
+  public title!: string
 
-  @Prop({type: Boolean, required: true})
-  public readonly isActive!: boolean
+  public isActive = false
+
 
 }
 export default STab

@@ -17,6 +17,7 @@ export default meta
 
 const defaultArgs = {
     label: 'Dropdown Item',
+    value: 'item_value'
 }
 
 

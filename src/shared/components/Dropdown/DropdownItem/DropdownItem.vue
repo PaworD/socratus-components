@@ -12,7 +12,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
   name: 'SDropdownItem',
 
   mounted (): void {
-   console.log(this.$attrs)
+   //
   }
 
 })
@@ -20,8 +20,11 @@ export class SDropdownItem extends Vue {
   @Prop({type: String, required: true})
   private readonly label!: string
 
+  @Prop({type: String, required: true})
+  private readonly value!: string
+
   public onClick (): void {
-    this.$emit('click')
+    this.$emit('click', this.value)
   }
 }
 export default SDropdownItem

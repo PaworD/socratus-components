@@ -5,7 +5,7 @@
     'input--small' : size == sizes.SMALL,
     'input--medium' : size == sizes.MEDIUM,
     'input--normal' : size == sizes.NORMAL
-  }]" :placeholder="placeholder">
+  }]" :placeholder="placeholder" :value="value" @input="updateSelf">
 </template>
 
 <script lang="ts">
@@ -23,6 +23,9 @@ export class STextInput extends Vue {
   @Prop({type: String, required: false})
   private readonly placeholder!: string
 
+  @Prop({type: String, required: false})
+  private readonly value!: string
+
   @Prop({type: Boolean, required: false, default: false})
   private readonly flat!: boolean
 
@@ -30,6 +33,10 @@ export class STextInput extends Vue {
   private readonly size!: InputSize
 
   private readonly sizes = InputSize
+
+  public updateSelf($event: InputEvent) {
+    this.$emit("input", $event.target.value);
+  }
 
 }
 
@@ -41,10 +48,8 @@ export default STextInput
     width: 100%;
 		background: #fff;
 		font: inherit;
-		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
-		border: 0;
 		outline: 0;
-    border: 1px solid transparent;
+    border: 1px solid $dark;
     transition: all .3s ease;
 
     &:focus {

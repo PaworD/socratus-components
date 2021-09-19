@@ -46,6 +46,6 @@ const TemplateDefault: Story<ButtonProps> = (args, {argTypes}) => ({
   methods: methods,
 })
 
-export const Button = TemplateDefault.bind({})
-Button.args = defaultArgs
+export const ButtonDefault = TemplateDefault.bind({})
+ButtonDefault.args = defaultArgs
 

@@ -11,6 +11,7 @@
               v-for="item in list"
               :key="item.label"
               :label="item.label"
+              :value="item.value"
               :class="{'current' : item.label === val}"
               @click="selectItem(item)" />
         </ul>
@@ -41,6 +42,7 @@ export class SDropdown extends Vue {
 
   public selectItem(item: DropdownItemProps): void {
     this.val = item.label
+    this.$emit('on-select', item.value)
   }
 }
 

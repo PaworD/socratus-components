@@ -1,6 +1,5 @@
 import { Meta, Story} from '@storybook/vue'
 import { SDropdown, DropdownType, DropdownProps } from './index'
-import { SButton , ButtonSize } from '../Button'
 
 const meta: Meta = {
     title: 'Components/Dropdown/List',
@@ -24,7 +23,7 @@ const meta: Meta = {
 export default meta
 
 const defaultArgs = {
-    list: [{label: 'Item 1'}, {label: 'Item 2'}, {label: 'Item 3'} ],
+    list: [{label: 'Item 1', value: 'item_value'}, {label: 'Item 2', value: 'item_value'}, {label: 'Item 3', value: 'item_value'} ],
     value: 'Select option',
     type: DropdownType.SIMPLE
 }
@@ -32,11 +31,10 @@ const defaultArgs = {
 
 const TemplateDefault: Story<DropdownProps> = (args, {argTypes}) => ({
     props: Object.keys(argTypes),
-    components: {SDropdown, SButton},
+    components: {SDropdown},
     template: `
       <div>
       <SDropdown v-bind="$props"/>
-      <SButton v-ripple flat label="Button"/>
       </div>
   `,
 })
