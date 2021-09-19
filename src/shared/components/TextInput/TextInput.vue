@@ -34,7 +34,7 @@ export class STextInput extends Vue {
 
   private readonly sizes = InputSize
 
-  public updateSelf($event: InputEvent) {
+  public updateSelf($event: any) {
     this.$emit("input", $event.target.value);
   }
 

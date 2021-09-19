@@ -46,7 +46,7 @@ export class STable extends Vue {
   }
 
   public get hasAction (): boolean {
-    return this._rows[0].actions
+    return this._rows[0].actions !== []
   }
 }
 export default STable

@@ -190,7 +190,7 @@ export class SCalendar extends Vue {
           countDayInPreviousMonth
               ? formattedPreviousYear
               : false;
-      let additional = {
+      let additional: {month: string | boolean, year: string | boolean} | false = {
         month: previousMonth,
         year: previousYear
       };
@@ -282,7 +282,7 @@ export class SCalendar extends Vue {
             formattedCurrentYear !== formattedNextYear && day === 1
                 ? formattedNextYear
                 : false;
-        let additional = {
+        let additional: {month: string | boolean, year: string | boolean} | false = {
           month: nextMonth,
           year: nextYear
         };
